@@ -1,0 +1,117 @@
+.create-user-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.create-user-body select {
+  margin-left: 0;
+  width: 80%;
+}
+
+.create-user-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.create-user-content {
+  display: flex;
+  position: relative;
+  padding: 20px;
+  min-width: 15%;
+}
+
+.create-user {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-user label {
+  font-family: serif;
+  width: 100%;
+  font-weight: 600;
+}
+
+.create-user input {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.create-title {
+  width: 100%;
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  font-weight: 700;
+}
+
+.create-button {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.create-button button {
+  max-width: 50%;
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.create-user div {
+  margin-bottom: 15px;
+}
+
+.create-active-user {
+  height: 600px;
+  margin-left: 20px;
+  padding: 20px;
+  font-family: sans-serif;
+  border-left: 1px solid #ccc;
+  max-width: 300px;
+  white-space: nowrap;
+}
+
+.create-user-list button {
+  margin-bottom: 5px;
+  font-family: Tahoma;
+  display: flex;
+  border: none;
+}
+
+.create-user-list button:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.create-button-delete button {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#cancel-create {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.create-confirm-delete-inside {
+  position: absolute;
+  background-color: red;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+@media only screen and (max-width: 560px) {
+  .create-title {
+    width: 100%;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    font-weight: 700;
+  }
+
+  .create-user input {
+    width: 80%;
+    padding-left: 10px;
+  }
+}

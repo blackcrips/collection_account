@@ -1,0 +1,314 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eee;
+  display: flex;
+}
+
+.dashboard-parent-information {
+  margin-top: 35px;
+  background-color: rgb(199, 195, 195);
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.child-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.child-header div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  /* background-color: white; */
+  /* box-shadow: 0 0 3px 1px inset black; */
+  background: linear-gradient(45deg, #14279b, #3d56b2);
+  color: white;
+}
+
+.child-header label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  color: white;
+  font-size: 22px;
+}
+
+.child-header span {
+  color: #1f1d36;
+  font-size: 18px;
+  color: white;
+}
+
+.total-data {
+  margin-right: 20px;
+}
+
+.container-year-new-hidden,
+.container-year-fullypaidNew-hidden,
+.container-year-fullypaidReloan-hidden,
+.container-year-reloan-hidden {
+  background-color: white;
+  width: 50%;
+  padding: 10px 20px;
+}
+
+.container-year-new-hidden table,
+.container-year-fullypaidNew-hidden table,
+.container-year-fullypaidReloan-hidden table,
+.container-year-reloan-hidden table {
+  width: 100%;
+}
+
+.container-hidden {
+  background-color: thistle;
+  display: none;
+  padding: 10px;
+}
+
+.container-hidden div {
+  margin-right: 10px;
+}
+
+.container-hidden td {
+  text-align: center;
+  border: 1px solid black;
+}
+
+.child-information,
+.container-search {
+  background-color: white;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.child-information table,
+.container-search table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.child-information td,
+.container-search td {
+  border: 1px solid black;
+  text-align: center;
+  padding: 0 5px;
+}
+
+.child-information-table-header,
+.search-table-header {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#button-year {
+  width: 50px;
+  font-weight: bold;
+}
+
+.search-field {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+#btn-search {
+  font-size: 13px;
+}
+
+.alert-message {
+  color: red;
+}
+
+.dashboard-view-users {
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: White;
+  font-weight: bold;
+}
+
+.dashboard-view-users-text:hover {
+  cursor: pointer;
+}
+
+.dashboard-view-users-text {
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.dashboard-parent-login {
+  display: flex;
+  background-color: white;
+  padding-top: 5px;
+  flex-direction: column;
+  width: 0;
+  transition: all 1s;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.active.dashboard-parent-login {
+  width: 20%;
+  transition: all 1s;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.dashboard-information {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  width: 100%;
+  margin-top: 10px;
+  transition: width 1s;
+}
+
+.active.dashboard-information {
+  width: 80%;
+}
+
+.users-panel:hover {
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.users-panel {
+  white-space: nowrap;
+  display: flex;
+}
+
+.login-child-title {
+  width: 100%;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 27px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-child-information-content {
+  display: flex;
+  width: 100%;
+  font-family: sans-serif;
+  min-height: 25px;
+  font-size: 14px;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+.login-name-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.action button {
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+}
+.green-dot {
+  width: 10px;
+  background-color: green;
+  border-radius: 50%;
+  height: 10px;
+  margin-right: 5px;
+}
+
+.action:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.date-search {
+  padding-left: 5px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .active.dashboard-parent-login {
+    min-width: 15%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+
+  .login-child-title {
+    font-size: 20px;
+
+    transition: all 1s;
+  }
+
+  .login-child-information-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    transition: all 1s;
+  }
+  .child-information-table {
+    overflow: scroll;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .login-child-title {
+    font-size: 12px;
+    transition: all 1s;
+  }
+
+  .login-child-information-content {
+    font-size: 10px;
+  }
+
+  .child-header label {
+    font-size: 12px;
+  }
+
+  .child-header span {
+    font-size: 12px;
+  }
+
+  .child-information-table {
+    overflow: scroll;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .login-child-title {
+    font-size: 10px;
+    font-weight: bolder;
+    transition: all 1s;
+  }
+}
