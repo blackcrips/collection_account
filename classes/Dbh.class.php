@@ -5,7 +5,7 @@
     private $host = "localhost";
     private $username = "root";
     private $password = "123456";
-    private $dbname = "new_aeging";
+    private $dbname = "collection_account";
 
     protected function  connect() {
       $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
