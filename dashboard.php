@@ -35,12 +35,12 @@ require_once('./adminheader.php');
                         </tr>
                     </th>
                     <tbody>
-                        <?php foreach ($getNewData->getYearsToDateNew()[0] as $key => $value) : $year = date('Y', strtotime($value[0][0]['date_released']) + 1); ?>
+                        <?php foreach ($getNewData->getYearsToDateNew()[0] as $key => $value) : $year = date('Y', strtotime($value[0]['date_released']) + 1); ?>
                             <tr>
                                 <td id="dashboard-year"><?php echo $year ?></td>
-                                <td id="dashboard-peso-NL"><?php echo number_format($value[0][0]['outstandingBalance']) ?></td>
-                                <td id="dashboard-peso-NC"><?php echo $value[0][0]['rowCount'] ?></td>
-                                <td id="total-paid-new"><?php echo $value[0][0]['totalAmountPaid'] ?></td>
+                                <td id="dashboard-peso-NL"><?php echo number_format($value[0]['outstandingBalance']) ?></td>
+                                <td id="dashboard-peso-NC"><?php echo $value[0]['rowCount'] ?></td>
+                                <td id="total-paid-new"><?php echo $value[0]['totalAmountPaid'] ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -208,13 +208,15 @@ require_once('./adminheader.php');
                         </div>
                         <div class="access" id="agent-access"><?php echo $key['access'] ?></div>
                         <div class="access" hidden id='agent-status'><?php echo $key['status'] ?></div>
-                        <div class="action" id="agent-action"><button type='submit' name='dashboard-logout' id='dashboard-logout'>Logout</button></div>
+                        <div class="action" id="agent-action"><button type='submit' name='dashboard-logout' class='dashboard-logout'>Logout</button></div>
                         <input type="text" name='agent-id' hidden value="<?php echo $key['id'] ?>">
                     </div>
                 </form>
             <?php endforeach; ?>
+            
         </div>
     </div>
+                
 </div> <!-- end of whole div -->
 
 

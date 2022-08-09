@@ -1,3 +1,8 @@
+<?php 
+include_once('./includes/autoloadclasses.inc.php');
+$getNewData = new Dbhcontroller();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,14 +15,7 @@
 </head>
 <body>
     <div class="parent-login">
-        <div class="child-information">
-            <div class="logo"></div>
-            <div class="child-information-inside">
-                <input type="text" placeholder="Username">
-                <input type="text" placeholder="Password">
-                <button class='btn btn-primary'>Submit</button>
-            </div>
-        </div>
+    <?php echo "<pre>"; var_dump($getNewData->getYearsToDateNew()); ?>
     </div>
 </body>
 </html>

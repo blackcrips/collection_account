@@ -233,8 +233,13 @@ class Dbhmodel extends Dbh
         $stmt->execute([':startDate' => $startDate, ':endDate' => $endDate, ':loanType' => $loanType]);
         $result = $stmt->fetchAll();
 
+        if(!$result[0]['date_released'] == null || !$result[0]['date_released'] == ''){
+            return $result;
+        } else {
+            return;
+        }
 
-        return array($result);
+        // return $result;
     }
 
     protected function dashboardNewFullyPaid($startDate, $endDate, $loanType)

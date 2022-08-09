@@ -29,7 +29,7 @@ for(let a = 0; a < hiddenDashboardYear.length; a++){
                                 <td id='new-number'>${parseInt(getNotNumber(hiddenDashboardPesoNC[a].innerHTML)).toLocaleString()}</td>
                                 <td id='reloan-number'>${parseInt(getNotNumber(hiddenDashboardPesoRC[a].innerHTML)).toLocaleString()}</td>
                                 <td id='total-number'>Total Number</td>
-                                <td id='collected-amount'>${(parseInt(totalPaidNew[a].innerHTML) + parseInt(totalPaidReloan[a].innerHTML)).toLocaleString()}</td>
+                                <td id='collected-amount'></td>
                                 <td id='fully-paid-new'>${parseInt(getNotNumber(hiddenDashboardFNL[a].innerHTML)).toLocaleString()}</td>
                                 <td id='fully-paid-reloan'>${parseInt(getNotNumber(hiddenDashboardFRL[a].innerHTML)).toLocaleString()}</td>
                                 <td id='total-fully-paid'>Total Peso Year</td>
@@ -50,8 +50,50 @@ let newPeso = document.querySelectorAll('#new-peso');
 let reloanPeso = document.querySelectorAll('#reloan-peso');  
 
 for(let b = 0; b < totalPeso.length; b++){
-    let totalPesoComputed = parseInt(hiddenDashboardPesoNL[b].innerHTML) + parseInt(hiddenDashboardPesoRL[b].innerHTML);
+    let pesoNL = hiddenDashboardPesoNL[b].innerHTML;
+    let pesoRL = hiddenDashboardPesoRL[b].innerHTML;
+
+    if(pesoNL == 0 || pesoNL == '0'){
+        pesoNL = 0;
+        if(pesoRL == 0 || pesoRL =='0'){
+            pesoRL = 0;
+        } else {
+            pesoRL = parseInt(pesoRL.replace(",",''));
+        }
+    } else {
+        pesoNL = parseInt(pesoNL.replace(",",''));
+    }
+
+
+    let totalPesoComputed = pesoNL + pesoRL;
     totalPeso[b].innerHTML = totalPesoComputed.toLocaleString();
+
+}
+
+let totalCollectedAmount = document.querySelectorAll('#collected-amount');
+
+for(let y = 0; y < totalPaidNew.length; y++){
+    let paidNew = totalPaidNew[y].innerHTML;
+    let paidReloan = totalPaidReloan[y].innerHTML;
+
+    if(paidNew == 0 || paidNew == '0'){
+        paidNew = 0;
+        if(paidReloan == 0 || paidReloan =='0'){
+            paidReloan = 0;
+        } else {
+            paidReloan = parseInt(paidReloan.replace(",",''));
+        }
+    } else {
+        paidNew = parseInt(paidNew.replace(",",''));
+    }
+
+
+    let collectedMonth = paidNew + paidReloan;
+    totalCollectedAmount[y].innerHTML = numberWithCommas(collectedMonth);
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 }
 
 

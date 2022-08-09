@@ -432,16 +432,20 @@ class Dbhcontroller extends Dbhmodel
         $newArray = [];
         $newFullyPaidArray = [];
 
-        for ($i = $currentDate; $i >= $startDate; $i--) {
+        for ($i = $currentDate; $i > $startDate; $i--) {
             $startYear = $i . '-01-01';
             $endYear = $i . '-12-31';
             $typeNew = 'N';
 
-            $newArray[] = $this->dashboardNewData($startYear, $endYear, $typeNew);
-            $newFullyPaidArray[] = $this->dashboardNewFullyPaid($startYear, $endYear, $typeNew);
+            if(!$this->dashboardNewData($startYear, $endYear, $typeNew) == null){
+                
+                $newArray[] = $this->dashboardNewData($startYear, $endYear, $typeNew);
+                $newFullyPaidArray[] = $this->dashboardNewFullyPaid($startYear, $endYear, $typeNew);
+            }
         }
 
         return array($newArray, $newFullyPaidArray);
+        // return $newArray;
     }
 
     public function getYearsToDateReloan()
