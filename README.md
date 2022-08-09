@@ -34,6 +34,6 @@ password: admin
   * checking of status of client
   * dynamically compute interest and penalties if past due account
 
-
-<strong> Created with </strong>
+<br>
+<strong> Created with: </strong>
 HTML, CSS, Javascript, PHP, SQL, MomentJS
