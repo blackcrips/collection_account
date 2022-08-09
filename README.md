@@ -25,6 +25,11 @@ password: admin
 ![image](https://user-images.githubusercontent.com/89094409/183701592-1803149b-d31c-4d96-b0d4-3cad4e7c91c7.png)
 
 
+<strong> Verifier Dashboard </strong>
+  - username: user
+  - password: user
+![image](https://user-images.githubusercontent.com/89094409/183702811-07a38084-a52c-4e36-b002-241657addc0d.png)
+
 
 
 --------------------------------------
