@@ -33,8 +33,8 @@ password: admin
 
 
 --------------------------------------
-<h1>created for:</h1>
-  * viewing of cliens details and status
+<h1>Created for:</h1>
+  * viewing of clients details and status
   * edit specific record
   * checking of status of client
   * dynamically compute interest and penalties if past due account
